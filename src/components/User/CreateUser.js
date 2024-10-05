@@ -9,8 +9,10 @@ const CreateUser = () => {
     const [isLoading, setIsLoading] = useState(false);
     const [user, setUser] = useState({
         name: "",
+        username: "",
         email: "",
-        phone: ""
+        phone: "",
+        hometown: ""
     })
 
     const handelInput = (event) => {
@@ -35,7 +37,7 @@ const CreateUser = () => {
 
             if (response.ok) {
                 console.log('Form submitted successfully!');
-                setUser({name: "",email: "",phone: ""})
+                setUser({name: "", username: "", email: "", phone: "", hometown: ""})
                 navigate('/show-user');
             } else {
                 console.error('Form submission failed!');
@@ -60,13 +62,21 @@ const CreateUser = () => {
                     <label for="name" className="form-label">Name</label>
                     <input type="text" className="form-control" id="name" name="name" value={user.name} onChange={handelInput} />
                 </div>
-                <div className="mb-3 mt-3">
-                    <label for="email" className="form-label">Email</label>
+                <div className="mb-3">
+                    <label htmlFor="username" className="form-label">Username</label>
+                    <input type="text" className="form-control" id="username" name="username" value={user.username} onChange={handelInput} />
+                </div>
+                <div className="mb-3">
+                    <label htmlFor="email" className="form-label">Email</label>
                     <input type="email" className="form-control" id="email" name="email" value={user.email} onChange={handelInput} />
                 </div>
                 <div className="mb-3">
-                    <label for="pwd" className="form-label">Phone</label>
+                    <label htmlFor="phone" className="form-label">Phone</label>
                     <input type="text" className="form-control" id="phone" name="phone" value={user.phone} onChange={handelInput} />
+                </div>
+                <div className="mb-3">
+                    <label htmlFor="hometown" className="form-label">Hometown</label>
+                    <input type="text" className="form-control" id="hometown" name="hometown" value={user.hometown} onChange={handelInput} />
                 </div>
                 <button type="submit" className="btn btn-primary submit-btn">Submit</button>
             </form>

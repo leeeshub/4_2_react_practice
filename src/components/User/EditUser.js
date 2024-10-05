@@ -62,8 +62,8 @@ const EditUser = () => {
   return (
     <div className="user-form">
       <div className="heading">
-      {isLoading && <Loader />}
-      {error && <p>Error: {error}</p>}
+        {isLoading && <Loader />}
+        {error && <p>Error: {error}</p>}
         <p>Edit Form</p>
       </div>
       <form onSubmit={handelSubmit}>
@@ -80,7 +80,20 @@ const EditUser = () => {
             onChange={handelInput}
           />
         </div>
-        <div className="mb-3 mt-3">
+        <div className="mb-3">
+          <label for="username" className="form-label">
+            Username
+          </label>
+          <input
+            type="text"
+            className="form-control"
+            id="username"
+            name="username"
+            value={user.username}
+            onChange={handelInput}
+          />
+        </div>
+        <div className="mb-3">
           <label for="email" className="form-label">
             Email
           </label>
@@ -94,7 +107,7 @@ const EditUser = () => {
           />
         </div>
         <div className="mb-3">
-          <label for="pwd" className="form-label">
+          <label for="phone" className="form-label">
             Phone
           </label>
           <input
@@ -103,6 +116,19 @@ const EditUser = () => {
             id="phone"
             name="phone"
             value={user.phone}
+            onChange={handelInput}
+          />
+        </div>
+        <div className="mb-3">
+          <label for="hometown" className="form-label">
+            Hometown
+          </label>
+          <input
+            type="text"
+            className="form-control"
+            id="hometown"
+            name="hometown"
+            value={user.hometown}
             onChange={handelInput}
           />
         </div>

@@ -27,25 +27,32 @@ const EditUser = () => {
       <table className="table table-bordered">
     <thead>
       <tr>
-        <th>Firstname</th>
-        <th>Lastname</th>
-        
+        <th>Field</th>
+        <th>Value</th>
       </tr>
     </thead>
     <tbody>
-      <tr>
-        <td>Name</td>
-        <td>{user.name}</td>
-      </tr>
-      <tr>
-        <td>Email</td>
-        <td>{user.email}</td>
-      </tr>
-      <tr>
-        <td>Phone</td>
-        <td>{user.phone}</td>
-      </tr>
-    </tbody>
+          <tr>
+            <td>Name</td>
+            <td>{user.name}</td>
+          </tr>
+          <tr>
+            <td>Username</td>
+            <td>{user.username}</td>
+          </tr>
+          <tr>
+            <td>Email</td>
+            <td>{user.email}</td>
+          </tr>
+          <tr>
+            <td>Phone</td>
+            <td>{user.phone}</td>
+          </tr>
+          <tr>
+            <td>Hometown</td>
+            <td>{user.hometown}</td>
+          </tr>
+        </tbody>
   </table>
     </div>
   );

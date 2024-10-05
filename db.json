@@ -2,33 +2,59 @@
   "user": [
     {
       "name": "John",
+      "username": "john22",
       "email": "john@example.com",
       "phone": "(555) 555-1234",
+      "hometown": "Seoul",
       "id": 1
     },
     {
       "name": "Mary",
+      "username": "mary123",
       "email": "\tmary@example.com",
-      "phone": "(555) 555-1234",
+      "phone": "(555) 555-3252",
+      "hometown": "Pohang",
       "id": 2
     },
     {
       "name": "Dooley",
+      "username": "justdo2t",
       "email": "july@example.com",
       "phone": "(555) 555-8521",
+      "hometown": "Busan",
       "id": 3
     },
     {
       "name": "Moe",
+      "username": "m0e2",
       "email": "Moe@example.com",
       "phone": "(555) 555-7410",
+      "hometown": "Incheon",
       "id": 4
     },
     {
       "name": "Doe",
+      "username": "eodoe001",
       "email": "Doe@example.com",
       "phone": "(555) 555-7896",
+      "hometown": "Gwangju",
       "id": 5
+    },
+    {
+      "name": "Kay",
+      "username": "katyle9384",
+      "email": "Kay12@example.com",
+      "phone": "(555) 555-9341",
+      "hometown": "Daegu",
+      "id": 6
+    },
+    {
+      "name": "Jess",
+      "username": "happycat4",
+      "email": "Jess@example.com",
+      "phone": "(555) 555-0124",
+      "hometown": "Daejeon",
+      "id": 7
     }
   ]
 }
