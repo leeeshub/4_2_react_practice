@@ -25,6 +25,14 @@ const CreateUser = () => {
     const handelSubmit = async (event) => {
         event.preventDefault();
         console.log(user)
+
+        // 확인 알림창
+        const confirmAlert = window.confirm("Do you want to add the user?");
+
+        if(!confirmAlert) {
+            return;
+        }
+        
         try {
             setIsLoading(true);
             const response = await fetch(createUserApi, {
