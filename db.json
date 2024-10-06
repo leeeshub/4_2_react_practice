@@ -55,6 +55,22 @@
       "phone": "(555) 555-0124",
       "hometown": "Daejeon",
       "id": 7
+    },
+    {
+      "name": "April",
+      "username": "4april4",
+      "email": "aprilee@example.com",
+      "phone": "(555) 134-8285",
+      "hometown": "Gyeongju",
+      "id": 8
+    },
+    {
+      "name": "Daniel",
+      "username": "dankim",
+      "email": "dankim@example.com",
+      "phone": "(555) 999-6283",
+      "hometown": "Jeonju",
+      "id": 9
     }
   ]
 }
