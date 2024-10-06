@@ -6,7 +6,7 @@
       "email": "john@example.com",
       "phone": "(555) 555-1234",
       "hometown": "Seoul",
-      "id": 1
+      "id": "1"
     },
     {
       "name": "Mary",
@@ -14,7 +14,7 @@
       "email": "\tmary@example.com",
       "phone": "(555) 555-3252",
       "hometown": "Pohang",
-      "id": 2
+      "id": "2"
     },
     {
       "name": "Dooley",
@@ -22,7 +22,7 @@
       "email": "july@example.com",
       "phone": "(555) 555-8521",
       "hometown": "Busan",
-      "id": 3
+      "id": "3"
     },
     {
       "name": "Moe",
@@ -30,7 +30,7 @@
       "email": "Moe@example.com",
       "phone": "(555) 555-7410",
       "hometown": "Incheon",
-      "id": 4
+      "id": "4"
     },
     {
       "name": "Doe",
@@ -38,7 +38,7 @@
       "email": "Doe@example.com",
       "phone": "(555) 555-7896",
       "hometown": "Gwangju",
-      "id": 5
+      "id": "5"
     },
     {
       "name": "Kay",
@@ -46,7 +46,7 @@
       "email": "Kay12@example.com",
       "phone": "(555) 555-9341",
       "hometown": "Daegu",
-      "id": 6
+      "id": "6"
     },
     {
       "name": "Jess",
@@ -54,7 +54,7 @@
       "email": "Jess@example.com",
       "phone": "(555) 555-0124",
       "hometown": "Daejeon",
-      "id": 7
+      "id": "7"
     },
     {
       "name": "April",
@@ -62,7 +62,7 @@
       "email": "aprilee@example.com",
       "phone": "(555) 134-8285",
       "hometown": "Gyeongju",
-      "id": 8
+      "id": "8"
     },
     {
       "name": "Daniel",
@@ -70,7 +70,7 @@
       "email": "dankim@example.com",
       "phone": "(555) 999-6283",
       "hometown": "Jeonju",
-      "id": 9
+      "id": "9"
     }
   ]
 }
