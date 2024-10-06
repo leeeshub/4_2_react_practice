@@ -1,6 +1,6 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useParams , Link } from "react-router-dom";
 import "./User.css";
 const EditUser = () => {
   const [user, setUser] = useState([]);
@@ -24,6 +24,14 @@ const EditUser = () => {
 
   return (
     <div className="user mt-5">
+      {/* 이 화면에서도 사용자를 edit 할 수 있도록 함. */}
+      <div className="d-flex justify-content-between align-items-center mb-3">
+        <h4>User Info</h4>
+        <Link to={`/edit-user/${id}`}>
+          <button className="btn btn-primary w-100">Edit</button>
+        </Link>
+      </div>
+
       <table className="table table-bordered">
     <thead>
       <tr>
