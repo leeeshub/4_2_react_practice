@@ -83,11 +83,12 @@ const ShowUser = () => {
                   <td>{item.phone}</td>
                   <td>{item.hometown}</td>
                   <td>
+                    {/* 직관적인 show 버튼으로 사용자 정보를 확인할 수 있도록 한다. */}
+                    <Link to={`/user/${item.id}`}>
+                      <button className="btn btn-info btn-sm me-2">Show</button>
+                    </Link>
                     <Link to={`/edit-user/${item.id}`}>
                       <i className="fa fa-pencil" aria-hidden="true"></i>
-                    </Link>
-                    <Link to={`/user/${item.id}`}>
-                      <i className="fa fa-eye" aria-hidden="true"></i>
                     </Link>
 
                     <i
