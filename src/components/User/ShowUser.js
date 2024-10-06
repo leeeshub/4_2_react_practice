@@ -12,20 +12,30 @@ const ShowUser = () => {
 
   const handelDelete = async (id) => {
     console.log("id : -", id);
-    setIsLoading(true);
-    try {
-      const response = await fetch(showUserApi.concat("/") + id, {
-        method: "DELETE",
-      });
-      if (!response.ok) {
-        throw new Error("Failed to delete item");
+
+    // 사용자를 취소 하고자 할 때 confirm 하는 창을 띄워서 정말 취소할 것인지 확인하는 작업 추가.
+    const confirmAlert = window.confirm("Do you want to delete this user?");
+
+    if(confirmAlert) {
+      setIsLoading(true);
+      try {
+        const response = await fetch(showUserApi.concat("/") + id, {
+          method: "DELETE",
+        });
+        if (!response.ok) {
+          const errorText = await response.text();
+          throw new Error(`Failed to delete item: ${response.status} ${response.statusText}. ${errorText}`);
+        }
+        const result = await response.json();
+        console.log("Delete result:", result);
+        setUser(user.filter((item) => item.id !== id));
+      } catch (error) {
+        console.error("Delete error:", error);
+        setError(error.message);
+      } finally {
+        setIsLoading(false);
       }
-      setUser(user.filter((item) => item.id !== id));
-    } catch (error) {
-      setError(error.message);
-    } finally {
-      setIsLoading(false);
-    }
+    }   
   };
 
   useEffect(() => {
