@@ -10,6 +10,10 @@ const ShowUser = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
 
+  // 사용자 검색
+  const [searchName, setSearchName] = useState(null); // 사용자가 검색하고자 하는 이름
+  const [searchedUserList, setSearchedUserList] = useState([]); // 검색한 결과를 저장하고 있는 유저리스트
+
   const handelDelete = async (id) => {
     console.log("id : -", id);
 
@@ -29,6 +33,7 @@ const ShowUser = () => {
         const result = await response.json();
         console.log("Delete result:", result);
         setUser(user.filter((item) => item.id !== id));
+        setSearchedUserList(searchedUserList.filter((item) => item.id !== id));
       } catch (error) {
         console.error("Delete error:", error);
         setError(error.message);
@@ -47,10 +52,21 @@ const ShowUser = () => {
       .get(showUserApi)
       .then((res) => {
         setUser(res.data);
+        setSearchedUserList(res.data);
       })
       .catch((err) => {
         console.log(err);
       });
+  };
+
+  const searchUsers = (e) => {
+    e.preventDefault();
+    
+    const lowerSearchName = searchName.toLowerCase();
+    const list = user.filter(item =>
+      item.name.toLowerCase().includes(lowerSearchName)
+    );
+    setSearchedUserList(list);
   };
 
   if (user.length < 0) {
@@ -60,6 +76,17 @@ const ShowUser = () => {
       <div className="mt-5">
         {isLoading && <Loader />}
         {error && <p>Error: {error}</p>}
+
+        <div className="d-flex justify-content-between align-items-center mb-3">
+          <h4>User List</h4>
+          {/* 검색창 */}
+          <form className="d-flex" role="search" onSubmit={searchUsers}>
+            <input className="form-control me-2" type="search" placeholder="Search by name" 
+              aria-label="Search" value={searchName} onChange={(e) => setSearchName(e.target.value)} />
+            <button className="btn btn-outline-success" type="submit">Search</button>
+          </form>
+        </div>
+
         <table className="table table-striped">
           <thead>
             <tr>
@@ -73,7 +100,7 @@ const ShowUser = () => {
             </tr>
           </thead>
           <tbody>
-            {user?.map((item, i) => {
+            {searchedUserList?.map((item, i) => {
               return (
                 <tr key={i + 1}>
                   <td>{i + 1}</td>
